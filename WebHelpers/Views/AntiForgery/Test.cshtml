@@ -1,0 +1,41 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Anti Forgery Token</h2>
+<hr />
+
+<div class="row">
+    <div class="col-12">
+        <ul class="list-group">
+
+            @foreach (var item in Model)
+            {
+                <li class="list-group-item">@item</li>
+            }
+
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-4">
+            @Html.TextBox("id", "", new { @class = "form-control", placeholder = "Enter delete index id" })
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success">Delete item</button>
+        </div>
+    </div>
+}
+
+

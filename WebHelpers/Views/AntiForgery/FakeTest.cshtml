@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "FakeTest";
+}
+
+<h2>FakeTest</h2>
+
+<hr />
+
+@using (Html.BeginForm("Test", "AntiForgery", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-4">
+            @Html.TextBox("id", "", new { @class = "form-control", placeholder = "Enter delete index id" })
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success">Delete item</button>
+        </div>
+    </div>
+}
+
